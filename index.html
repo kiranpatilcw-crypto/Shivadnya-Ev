@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivadnya EV Bike | Sina E-Bike</title>
+    <style>
+        body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #121212; color: #ffffff; }
+        header { background: #0a0a0a; padding: 20px; text-align: center; border-bottom: 2px solid #39ff14; }
+        h1 { margin: 0; color: #39ff14; font-size: 2.5em; text-transform: uppercase; letter-spacing: 2px; }
+        .tagline { color: #aaaaaa; font-size: 1.2em; margin-top: 5px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .hero { text-align: center; padding: 40px 20px; }
+        .hero h2 { font-size: 3em; margin: 0; }
+        .price { font-size: 3em; color: #39ff14; margin: 20px 0; font-weight: bold; text-shadow: 0 0 10px rgba(57, 255, 20, 0.3); }
+        .price span { font-size: 0.5em; color: #fff; font-weight: normal; }
+        .specs { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin: 40px 0; }
+        .spec-card { background: #1e1e1e; padding: 20px; border-radius: 10px; width: 150px; text-align: center; border: 1px solid #333; box-shadow: 0 4px 6px rgba(0,0,0,0.5); }
+        .spec-card h3 { color: #39ff14; margin: 0 0 10px 0; font-size: 1.5em; }
+        .spec-card p { margin: 0; font-size: 0.9em; color: #ccc; }
+        
+        /* Slider CSS */
+        .slider-container { position: relative; max-width: 700px; margin: 30px auto; overflow: hidden; border-radius: 15px; border: 2px solid #333; background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+        .slides { display: flex; transition: transform 0.5s ease-in-out; }
+        .slides img { width: 100%; flex-shrink: 0; object-fit: contain; }
+        .nav-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); color: white; border: none; width: 40px; height: 40px; cursor: pointer; font-size: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+        .nav-btn:hover { background: #39ff14; color: black; }
+        
+        footer { background: #0a0a0a; padding: 40px 20px; text-align: center; margin-top: 50px; border-top: 2px solid #333; }
+        .contact-info { margin-bottom: 20px; }
+        .contact-info h3 { color: #39ff14; margin-bottom: 10px; font-size: 1.5em; }
+        .contact-info p { margin: 5px 0; font-size: 1.1em; }
+        .book-btn { background: #39ff14; color: #000; padding: 15px 40px; font-size: 1.2em; border: none; border-radius: 30px; font-weight: bold; cursor: pointer; margin-top: 20px; transition: transform 0.2s; text-decoration: none; display: inline-block; }
+        .book-btn:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Shivadnya EV Bike</h1>
+        <div class="tagline">RIDE SMART. RIDE ELECTRIC. Ride SINA.</div>
+    </header>
+    
+    <div class="container">
+        <div class="hero">
+            <h2>SINA E-BIKE (8 Colors)</h2>
+            <div class="price">₹39,999 <span>/ Only</span></div>
+            
+            <div class="slider-container">
+                <div class="slides" id="slideTrack">
+                    <img src="302048.jpg" alt="Sina E-Bike Poster">
+                    <img src="302047.jpg" alt="Sina E-Bike Orange-Grey">
+                    <img src="302045.jpg" alt="Sina E-Bike Red-Silver">
+                    <img src="302046.jpg" alt="Sina E-Bike Blue">
+                    <img src="302044.jpg" alt="Sina E-Bike Grey">
+                    <img src="302041.jpg" alt="Sina E-Bike White">
+                    <img src="302042.jpg" alt="Sina E-Bike Sky-Blue">
+                    <img src="302043.jpg" alt="Sina E-Bike Black">
+                    <img src="302040.jpg" alt="Sina E-Bike Red">
+                </div>
+                <button class="nav-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="nav-btn next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+            
+            <a href="#" class="book-btn" download>Download Brochure</a>
+        </div>
+
+        <div class="specs">
+            <div class="spec-card"><h3>60-70</h3><p>KM/H Top Speed</p></div>
+            <div class="spec-card"><h3>70-90</h3><p>KM Range</p></div>
+            <div class="spec-card"><h3>60V/32AH</h3><p>Battery</p></div>
+            <div class="spec-card"><h3>Disc</h3><p>Brakes (F/R)</p></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="contact-info">
+            <h3>📍 आमचा पत्ता</h3>
+            <p>छत्रपती संभाजी राजे सभागृह, कुसुंबा ख., जळगाव 425003</p>
+            <p>📞 7262990323 | 9325834234</p>
+        </div>
+        <p>&copy; 2026 Shivadnya EV Bike. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slides img');
+        const totalSlides = slides.length;
+        const track = document.getElementById('slideTrack');
+
+        function moveSlide(direction) {
+            currentIndex += direction;
+            if (currentIndex >= totalSlides) currentIndex = 0;
+            if (currentIndex < 0) currentIndex = totalSlides - 1;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+        
+        setInterval(() => {
+            moveSlide(1);
+        }, 3000);
+    </script>
+</body>
+</html>
