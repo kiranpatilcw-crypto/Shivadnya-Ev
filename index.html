@@ -24,6 +24,7 @@
             background: radial-gradient(circle at top, #1a1a24 0%, var(--dark-bg) 100%); 
             color: var(--text-light); 
             min-height: 100vh;
+            scroll-behavior: smooth; /* Smooth scroll on button click */
         }
 
         header { 
@@ -31,11 +32,10 @@
             padding: 15px 20px; 
             text-align: center; 
             border-bottom: 1px solid rgba(57, 255, 20, 0.3); 
-            /* position: sticky kaun takle aahe jyamule to scroll hoil */
         }
 
         .logo {
-            max-width: 160px; /* Logo chi size kami keli aahe */
+            max-width: 160px; 
             height: auto;
             margin-bottom: 5px;
             filter: drop-shadow(0px 0px 8px rgba(255,255,255,0.1));
@@ -242,6 +242,41 @@
             line-height: 1.6;
         }
 
+        /* New Contact Links CSS */
+        .contact-persons {
+            margin-top: 20px;
+        }
+
+        .contact-persons p {
+            margin: 12px 0;
+            color: #ffffff;
+        }
+
+        .contact-link {
+            color: var(--primary-neon);
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 8px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .contact-link:hover {
+            background: rgba(57, 255, 20, 0.1);
+        }
+
+        .whatsapp {
+            color: #25D366;
+            border-color: rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp:hover {
+            background: rgba(37, 211, 102, 0.1);
+        }
+
         .credit {
             margin-top: 40px;
             padding-top: 20px;
@@ -292,7 +327,8 @@
             </div>
             
             <div class="btn-group">
-                <a href="#" class="book-btn" download>Download Brochure</a>
+                <!-- Book Now button linking to the contact section -->
+                <a href="#contact" class="book-btn">Book Now</a>
             </div>
         </div>
 
@@ -304,11 +340,25 @@
         </div>
     </div>
 
-    <footer>
+    <!-- Contact Section with ID for navigation -->
+    <footer id="contact">
         <div class="contact-info">
             <h3>📍 Our Address</h3>
             <p>Chhatrapati Sambhaji Raje Sabhagruh,<br>Kusumba Kh., Jalgaon 425003</p>
-            <p>📞 7262990323 | 9325834234</p>
+            
+            <!-- Added Names with Calling and WhatsApp Links -->
+            <div class="contact-persons">
+                <p>
+                    <strong>Chetan Patil:</strong> 
+                    <a href="tel:+917262990323" class="contact-link">📞 Call</a>
+                    <a href="https://wa.me/917262990323?text=Hi,%20I%20want%20to%20know%20more%20about%20Sina%20E-Bike" target="_blank" class="contact-link whatsapp">💬 WhatsApp</a>
+                </p>
+                <p>
+                    <strong>Rohit Suryawanshi:</strong> 
+                    <a href="tel:+919325834234" class="contact-link">📞 Call</a>
+                    <a href="https://wa.me/919325834234?text=Hi,%20I%20want%20to%20know%20more%20about%20Sina%20E-Bike" target="_blank" class="contact-link whatsapp">💬 WhatsApp</a>
+                </p>
+            </div>
         </div>
         
         <div class="credit">
