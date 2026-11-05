@@ -29,7 +29,7 @@
         header { 
             background: rgba(10, 10, 12, 0.85); 
             backdrop-filter: blur(12px);
-            padding: 25px 20px; 
+            padding: 20px 20px; 
             text-align: center; 
             border-bottom: 1px solid rgba(57, 255, 20, 0.3); 
             position: sticky;
@@ -38,26 +38,19 @@
             box-shadow: 0 4px 30px rgba(0,0,0,0.5);
         }
 
-        h1 { 
-            margin: 0; 
-            color: var(--text-light); 
-            font-size: 2.5em; 
-            font-weight: 800; 
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
-        }
-
-        h1 span {
-            color: var(--primary-neon);
-            text-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
+        .logo {
+            max-width: 280px;
+            height: auto;
+            margin-bottom: 5px;
+            filter: drop-shadow(0px 0px 10px rgba(255,255,255,0.2));
         }
 
         .tagline { 
             color: var(--text-muted); 
             font-size: 1.1em; 
-            margin-top: 10px; 
+            margin-top: 5px; 
             letter-spacing: 1px;
-            font-weight: 400;
+            font-weight: 600;
         }
 
         .container { 
@@ -92,11 +85,11 @@
             text-shadow: none;
         }
 
-        /* Slider CSS with Glassmorphism */
+        /* Slider CSS */
         .slider-container { 
             position: relative; 
             max-width: 750px; 
-            height: 450px; /* Fixed height to prevent collapsing */
+            height: 450px; 
             margin: 0 auto 40px auto; 
             overflow: hidden; 
             border-radius: 20px; 
@@ -123,7 +116,6 @@
         }
 
         .slides img[alt]:after {
-            /* Fallback text if image is missing */
             content: "Image Not Uploaded: " attr(alt);
             display: block;
             text-align: center;
@@ -272,12 +264,13 @@
             .slider-container { height: 300px; }
             .hero h2 { font-size: 2em; }
             .price { font-size: 2.5em; }
+            .logo { max-width: 200px; }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Shivadnya <span>EV</span></h1>
+        <img src="Shivadnya Electric Bike Emblem_2.png" alt="Shivadnya EV Logo" class="logo">
         <div class="tagline">RIDE SMART. RIDE ELECTRIC. Ride SINA.</div>
     </header>
     
@@ -288,16 +281,15 @@
             
             <div class="slider-container">
                 <div class="slides" id="slideTrack">
-                    <!-- Ensure these exact file names are uploaded to your GitHub Repo -->
-                    <img src="302048.jpg" alt="Sina E-Bike Poster">
-                    <img src="302047.jpg" alt="Sina E-Bike Orange-Grey">
-                    <img src="302045.jpg" alt="Sina E-Bike Red-Silver">
-                    <img src="302046.jpg" alt="Sina E-Bike Blue">
-                    <img src="302044.jpg" alt="Sina E-Bike Grey">
-                    <img src="302041.jpg" alt="Sina E-Bike White">
-                    <img src="302042.jpg" alt="Sina E-Bike Sky-Blue">
-                    <img src="302043.jpg" alt="Sina E-Bike Black">
-                    <img src="302040.jpg" alt="Sina E-Bike Red">
+                    <!-- Updated 8 Bike File Names -->
+                    <img src="shivadnya.ev.bike_jalgaon-20261104-0001.jpg_2.jpeg" alt="Sina E-Bike Red Black">
+                    <img src="shivadnya.ev.bike_jalgaon-20261104-0002.jpg_2.jpeg" alt="Sina E-Bike White Red">
+                    <img src="shivadnya.ev.bike_jalgaon-20261104-0003.jpg_2.jpeg" alt="Sina E-Bike Blue White">
+                    <img src="shivadnya.ev.bike_jalgaon-20261104-0004.jpg_2.jpeg" alt="Sina E-Bike Black Red">
+                    <img src="shivadnya.ev.bike_jalgaon-20261104-0005.jpg_2.jpeg" alt="Sina E-Bike Grey">
+                    <img src="shivadnya.ev.bike_jalgaon-20261104-0006.jpg_2.jpeg" alt="Sina E-Bike Silver Red">
+                    <img src="shivadnya.ev.bike_jalgaon-20261104-0007.jpg_2.jpeg" alt="Sina E-Bike Dark Blue">
+                    <img src="shivadnya.ev.bike_jalgaon-20261104-0008.jpg_2.jpeg" alt="Sina E-Bike Orange Grey">
                 </div>
                 <button class="nav-btn prev" onclick="moveSlide(-1)">&#10094;</button>
                 <button class="nav-btn next" onclick="moveSlide(1)">&#10095;</button>
